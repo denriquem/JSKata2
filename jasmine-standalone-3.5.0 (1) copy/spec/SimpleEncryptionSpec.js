@@ -1,21 +1,29 @@
 describe("Encrypter", () => {
-	let encrypter;
+    let encrypter;
 
-	beforeEach(() => {
-		encrypter = new Encrypter();
-	});
+    beforeEach(() => {
+        encrypter = new Encrypter();
+    });
 
-	describe("#encrypt", () => {
-		it('should return "hsi  etTi sats!" when passed "This is a test!"', () => {
-			expect(encrypter.encrypt("This is a test!", 1)).toEqual(
-				"hsi  etTi sats!"
-			);
-		});
+    describe("#encrypt", () => {
+        it('should return "hsi  etTi sats!" when passed "This is a test!"', () => {
+            expect(encrypter.encrypt("This is a test!", 1)).toEqual(
+                "hsi  etTi sats!"
+            );
+        });
 
-		it("should loop through and encrpyt twice if the number passd in is 2", () => {
-			expect(encrypter.encrypt("This is a test!", 2)).toEqual(
-				"s eT ashi tist!"
-			);
-		});
-	});
+        it("should loop through and encrpyt twice if the number passd in is 2", () => {
+            expect(encrypter.encrypt("This is a test!", 2)).toEqual(
+                "s eT ashi tist!"
+            );
+        });
+    });
+
+    describe("#decrypt", () => {
+        it('should return "This is a test" when passed "hsi  etTi sats!"', () => {
+            expect(encrypter.decrypt("hsi  etTi sats!"), 1).toEqual(
+                "This is a test!"
+            );
+        });
+    });
 });
