@@ -31,5 +31,11 @@ describe("Encrypter", () => {
                 encrypter.decrypt(" elyejyetn ra nweedIral no aigbedo ekns", 1)
             ).toEqual("I really enjoy eating bread on weekends");
         });
+
+        it("should decrypt a sentence where the encryption number is greater than one", () => {
+            expect(encrypter.decrypt("s eT ashi tist!", 2)).toEqual(
+                "This is a test!"
+            );
+        });
     });
 });
