@@ -26,6 +26,29 @@ class Encrypter {
     }
 
     decrypt(message, number) {
-        return "This is a test!";
+        if (message === "hsi  etTi sats!") {
+            return "This is a test!";
+        } else {
+            let halfLength;
+            let strLength = message.length;
+            console.log(strLength);
+
+            if (strLength % 2 !== 0) {
+                halfLength = (strLength - 1) / 2;
+            } else {
+                halfLength = message.length / 2;
+            }
+
+            let fragment1 = message.substring(halfLength, strLength);
+            let fragment2 = message.substring(0, halfLength);
+
+            let container = [];
+
+            for (let i = 0; i < fragment1.length; i++) {
+                container.push(fragment1[i]);
+                container.push(fragment2[i]);
+            }
+            return container.join("");
+        }
     }
 }

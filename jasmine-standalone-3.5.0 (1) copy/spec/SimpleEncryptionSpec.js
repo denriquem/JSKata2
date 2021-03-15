@@ -25,5 +25,11 @@ describe("Encrypter", () => {
                 "This is a test!"
             );
         });
+
+        it("should decrypt a longer and more complex sentece", () => {
+            expect(
+                encrypter.decrypt(" elyejyetn ra nweedIral no aigbedo ekns", 1)
+            ).toEqual("I really enjoy eating bread on weekends");
+        });
     });
 });
