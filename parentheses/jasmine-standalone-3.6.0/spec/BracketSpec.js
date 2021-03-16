@@ -14,7 +14,11 @@ describe("Bracket", () => {
             expect(bracket.check("()")).toEqual(true);
         });
 
-        it('should return true when passed "())"', () => {
+        it('should return false when passed "())"', () => {
+            expect(bracket.check("())")).toEqual(false);
+        });
+
+        it('should return true when passed "()()"', () => {
             expect(bracket.check("())")).toEqual(false);
         });
     });
