@@ -1,8 +1,10 @@
 class Bracket {
     check(input) {
         let arr = input.split("");
+        let first = arr.shift();
+        let last = arr.pop();
         let subsequentIndex;
-        for (let i = 0; i < input.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
             if (input[i] === input[i + 1]) {
                 subsequentIndex = "it is";
             }
@@ -17,6 +19,8 @@ class Bracket {
         } else if (input === "()()") {
             return true;
         } else if (subsequentIndex === "it is") {
+            return false;
+        } else if (first !== "(" || last !== ")") {
             return false;
         }
     }
