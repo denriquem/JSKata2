@@ -18,5 +18,17 @@ describe("ZeroMover", () => {
                 0,
             ]);
         });
+
+        it("should move all zeros in an array containing multiple zeros to the end", () => {
+            expect(zeroMover.move([0, 0, 3, "five", 2, 0, 1])).toEqual([
+                3,
+                "five",
+                2,
+                1,
+                0,
+                0,
+                0,
+            ]);
+        });
     });
 });
