@@ -19,7 +19,11 @@ describe("Bracket", () => {
         });
 
         it('should return true when passed "()()"', () => {
-            expect(bracket.check("())")).toEqual(false);
+            expect(bracket.check("()()")).toEqual(true);
+        });
+
+        it('should return true when passed "())("', () => {
+            expect(bracket.check("())(")).toEqual(false);
         });
     });
 });
